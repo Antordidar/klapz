@@ -1,0 +1,80 @@
+/* Start Header area style
+============================================================================================ */
+.header_area {
+    position: fixed;
+    z-index: 999;
+    @include transition();
+    background: transparent;
+    width: 100%;
+    padding: 15px 0;
+    &.fixed-nav {
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        background: #fff;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        top: 0;
+    }
+    .navbar {
+        background: transparent;
+        padding: 0px;
+        border: 0px;
+        border-radius: 0px;
+
+        .logo_h {
+            @include transition();
+        }
+
+        .nav {
+            .nav-item {
+                margin-right: 50px;
+                &.into-trigger {
+                    display: none;
+                }
+                a {
+                    font: 400 20px/60px $primary-font;
+                    text-transform: capitalize;
+                    color: #555555;
+                    padding: 0px;
+                    display: inline-block;
+                    position: relative;
+                    font-weight: 300;
+                }
+
+                &:hover,
+                &.active {
+                    a {
+                        opacity: 1;
+                        color: $primary-color;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        .nav-btn {
+            margin-left: 50px;
+            align-items: center;
+            .primary-btn {
+                box-shadow: none;
+                border: 1px solid $primary-color;
+                background: transparent;
+                color: $primary-color;
+                display: flex;
+                font-weight: 300;
+                padding: 0 70px;
+                &:hover {
+                    background: $primary-color;
+                    color: #fff;
+                    opacity: 1;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
